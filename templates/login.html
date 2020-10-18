@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plasma Doner App with Serverless Computing</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!link rel="stylesheet" href="style.css">
+
+    <style>
+        .login {
+            top: 20%;
+        }
+        
+        .button {
+            background-color: rgb(8, 8, 8);
+            color: white;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" style="background-color:black">
+        <div>Plasma Donor App</div>
+        <ul>
+
+
+            <li><a href="/requester">Request</a></li>
+            <li><a href="/registration">Register</a></li>
+            <li><a class="active" href="/login">Home</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <div>
+        </div>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('loginpage')}}" method="post">
+            <input type="text" name="user" placeholder="Enter UserName" required="required" style="color:rgb(10, 10, 10)" />
+            <input type="password" name="passw" placeholder="Enter Password" required="required" style="color:rgb(10, 10, 10)" />
+            <button type="submit" class="button">Login</button>
+
+        </form>
+        <br><br>
+        <div style="color:rgb(10, 10, 10)">
+            {{ pred }}</div>
+    </div>
+
+</body>
+
+</html>
